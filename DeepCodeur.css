@@ -1,94 +1,63 @@
 /* GENERAL */
 
-*
-{
-    
+*{    
     margin: 0;
-    padding: 0;
-    
+    padding: 0;    
 }
 
-body
-{
-    
+body{    
     font-family: Arial, sans-serif;
-    font-size: 15px;
-    
+    font-size: 15px;    
 }
 
 
-h1, h2, h3, h4
-{
-    
-    color: #444;
-    
+h1, h2, h3, h4{    
+    color: #444;    
 }
 
 
-h1
-{
-    
+h1{    
     font-family: "Crete Round", serif;
-    font-size: 45px;
-    
+    font-size: 45px;    
 }
 
 
-h2
-{
-    
-    font-size: 55px;
-    
+h2{    
+    font-size: 55px;    
 }
 
 
-h3
-{
-    
-    font-size: 30px;
-    
+h3{    
+    font-size: 30px;    
 }
 
 
-h4
-{
-    
-    font-size: 24px;
-    
+h4{    
+    font-size: 24px;    
 }
 
 
-p
-{
-    
+p{    
     line-height: 20px;
-    color: #777;
-    
+    color: #777;    
 }
 
-.orange
-{
-    
-    color: #FF7A00
-    
+.orange{    
+    color: red;
 }
 
 
-.clear 
-{
+.clear {
     
-   clear: both
-    
+   clear: both    
 }
 
 
-.wrapper
-{
+.wrapper{
     
     width: 940px;
     margin: 0 auto;
-    padding: 0 10px;
-    
+    padding: 0 10px;    
 }
 
 
@@ -119,30 +88,21 @@ small
 
 /* HEADER */
 
-header
-{
-    
-    height: 120px;
-    
+header{    
+    height: 120px;    
 }
 
 
-header h1
-{
-    
+header h1{    
     float: left;
     margin-top: 21px;
-    margin-left: 10px;
-    
+    margin-left: 10px;    
 }
 
 
-header nav
-{
-    
+header nav{    
     float: right;
-    margin-top: 50px;
-    
+    margin-top: 50px;    
 }
 
 
@@ -166,12 +126,15 @@ header nav ul li a
 
 /* MAIN IMAGE */
 
-#main-image
-{
-    
+#logo{
+    float: left;
+    width: 110px;
+    height: 90px;
+}
+
+#main-image{    
     height: 580px;
-    background: url("Images/main%20(1).jpg") center;
-    
+    background: url("Images/main\ \(1\).jpg") content-box;    
 }
 
 
