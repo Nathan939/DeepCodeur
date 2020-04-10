@@ -125,6 +125,13 @@ header nav ul li a
 
 
 /* MAIN IMAGE */
+#main-image{
+    background-color: #efefef;
+}
+#micro{
+    width: 110px;
+    height: 90px;
+}
 
 #logo{
     float: left;
@@ -156,7 +163,6 @@ header nav ul li a
     width: 120px;
     height: 50px;
     display: block;
-    background-color: #ff7a00;
     color: #fff;
     font-size: 20px;
     margin: 0 auto;
@@ -165,15 +171,6 @@ header nav ul li a
     border-radius: 8px
     
 }
-
-
-.button-1:hover
-{
-    
-    background: #02B8DD
-    
-}
-
 
 /* STEPS */
 
