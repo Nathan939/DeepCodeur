@@ -4,11 +4,15 @@
 
     <head>
     
-        <meta charset="utf-8">
-        <link href="DeepCodeur.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-        <title>Deep Codeur</title>
-        
+        <title>DeepCodeur</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="DeepCodeur.css">
+        <script src="script.js"></script>
     </head>
     
     
@@ -38,7 +42,7 @@
                 
                 <h2>Dévellopez votre <br><strong>site web sur mesure</strong></h2>
                 
-                <a href="#" class="button-1"><img src="image/Micro.png" id="micro"></a>
+                <a href="#" class="button-1"><img src="image/MicroPlus.png" id="micro"></a>
                 
             </div>
         </section>
@@ -69,34 +73,41 @@
         </section>
         
         
-        <section id="possibilities">
-            <div class="wrapper">
-                
-                 <article style="background-image: url(Images/article-image-1.jpg)">
-                
-                    <div class="overlay">
-                        
-                        <h4>Partez en famille</h4>
-                        <p><small>Offrez le meilleur à ceux que vous aimez et partagez des moments fabuleux !</small></p>
-                        
-                    <a href="#" class="button-2">Plus d'info</a>    
+        <section id="recommandations">
+            <div class="container">
+                <div class="red-divider"></div>
+                <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                         <li data-target="#myCarousel" data-slide-to="1"></li>
+                         <li data-target="#myCarousel" data-slide-to="2"></li>  
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <h3>"John t'es le meilleur! Merci pour tout..."</h3>
+                            <h4>Larry Page, Google Co-Founder</h4>       
+                        </div>
+                          <div class="item">
+                            <h3>"L'esprit le plus créatif que j'ai vu de toute ma vie..."</h3>
+                            <h4>Jack Dorsey, Twitter Founder and CEO</h4>       
+                        </div>
+                          <div class="item">
+                            <h3>"Merci John de m'avoir appris à coder... Tout ça c'est grâce à toi!"</h3>
+                            <h4>Mark Zuckerberg, Facebook Founder and CEO</h4>       
+                        </div>
                     </div>
-                     
-                </article>
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev" role="button">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next" role="button">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 
-                <article style="background-image: url(Images/article-image-2.jpg)">
-                
-                    <div class="overlay">
-                        
-                        <h4>Envie de s'évader</h4>
-                        <p><small>Parfois un peu d'évasion serait le bienvenue et ferait le plus grand bien !</small></p>
-                        
-                    <a href="#" class="button-2">Plus d'info</a>
-                    </div>
-                     
-                </article>
-                <div class="clear"></div>
+                </div>
+            
             </div>
+        
+        
         </section>
         
         
@@ -104,7 +115,6 @@
             <div class="wrapper">
                 
                 <h3>Contactez-nous</h3>
-                <p>Chez Travel Agency nous savons que voyager est une aventure humaine mais également un engagement financier important pour vous. C'est pourquoi nous mettons un point d'honneur à prendre en compte chacune de vos attentes pour vous aider dans la préparation de votre séjour, circuit ou voyage sur mesure.</p>
                 
                 <form>
                     <label for="name">Nom</label>
@@ -126,6 +136,9 @@
                 <h1><span class="orange">[</span>Deep Codeur<span class="orange">]</span></h1>
                 <div class="copyrigth">Copyright © 2016. Tous droits réservés.</div>
             </div>
+            <a href="#about">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
         </footer>
         
         

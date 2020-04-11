@@ -125,12 +125,9 @@ header nav ul li a
 
 
 /* MAIN IMAGE */
-#main-image{
-    background-color: #efefef;
-}
 #micro{
-    width: 110px;
-    height: 90px;
+    width: 150px;
+    height: 143px;
 }
 
 #logo{
@@ -142,6 +139,7 @@ header nav ul li a
 #main-image{    
     height: 580px;
     background: url("Images/main\ \(1\).jpg") content-box;    
+    background-color: #efefef;
 }
 
 
@@ -313,7 +311,64 @@ article h4
     
 }
 
+/* RECOMMANDATIONS */
+#recommandations
+{
+    background: #efefef;
+}
+#recommandations .heading h2
+{
+  color: #d82c2e;
+}
+.carousel-control.left, .carousel-control.right
+{
+    background-image: none;
+    color: #d82c2e;
+}
+.carousel-indicators
+{
+    bottom: 0px;
+}
+.carousel-indicators li
+{
+    border-color: #d82c2e;
+}
+.carousel-indicators li.active
+{
+    background-color: #d82c2e;
+}
+#myCarousel .item
+{
+    padding: 40px 30px;
+}
+#myCarousel .item h3
+{
+    color: #d82c2e;
+    font-style: italic;
+}
 
+/* FOOTER */
+footer
+{
+    background: #333;
+    padding: 20px 0 40px;
+}
+footer .glyphicon
+{
+    font-size:  25px;
+    margin: 20px;
+    color: #d82c2e;
+    height: 30px;
+}
+footer .glyphicon:hover
+{
+    font-size:  27px;
+}
+footer h5
+{
+    color: #fff;
+    font-weight: normal;
+}
 /* CONTACTS */
 
 #contact
@@ -412,4 +467,15 @@ footer h1
     padding-top: 30px;
     color: #777;
     
+}
+footer .glyphicon
+{
+    font-size:  25px;
+    margin: 20px;
+    color: #d82c2e;
+    height: 30px;
+}
+footer .glyphicon:hover
+{
+    font-size:  27px;
 }
