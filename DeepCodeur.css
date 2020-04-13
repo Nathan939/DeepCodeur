@@ -15,7 +15,6 @@ body{
     font-size: 15px;    
 }
 
-
 h1, h2, h3, h4{    
     color: #444;    
 }
@@ -92,10 +91,19 @@ small
 
 
 /* HEADER */
-
-header{    
-    height: 120px;
+.navbar{
+    background-color: white;
+}
+.container{
     background-color: #fff;
+}
+#features{
+    margin-top: 40px;
+    padding-left: 500px;
+}
+header{    
+    height: 20px;
+    background-color: red;
 }
 
 
@@ -108,7 +116,7 @@ header h1{
 
 header nav{    
     float: right;
-    margin-top: 50px;    
+    margin-top: 0px;    
 }
 
 
@@ -132,18 +140,15 @@ header nav ul li a
 /* MAIN IMAGE */
 #film
 {
-width:400px;
-height:300px;
-margin:auto;
-padding:auto;
-text-align:center;
- 
-}
- 
-#iframe
-{
-
- 
+    background-color: #fff;
+    width:1000px;
+    height:600px;
+    margin:auto;
+    padding:auto;
+    text-align:center;
+    border-radius: 15px;
+    margin-left: 250px;
+    margin-top: 67px;
 }
 #micro{
     width: 113px;
@@ -157,7 +162,7 @@ text-align:center;
 }
 
 #main-image{    
-    height: 580px;
+    height: 1180px;
     background: content-box;    
     background-color: #efefef;
 }
@@ -177,14 +182,12 @@ text-align:center;
 
 .button-1
 {
-    
     width: 120px;
     height: 50px;
     display: block;
     color: #fff;
     font-size: 20px;
     margin: 0 auto;
-    line-height: 50px;
     text-align: center;
     border-radius: 8px
     
@@ -331,6 +334,9 @@ article h4
     
 }
 /* EXPERIENCE */
+#etapes{
+    color: #d82c2e;
+}
 #experience
 {
     background: #fff;
@@ -498,6 +504,9 @@ footer h5
     font-weight: normal;
 }
 /* EDUCATION */
+.container{
+    background-color: #efefef;
+}
 #education
 {
     background: #efefef;
@@ -620,7 +629,7 @@ input[type="text"]
 footer
 {
     
-    height: 260px;
+    height: 312px;
     background-color: #444;
     
 }
@@ -647,14 +656,11 @@ footer .glyphicon
 {
     font-size:  25px;
     text-align: center;
-    margin: 20px;
+    padding-left: 421px;
     color: #d82c2e;
     height: 30px;
 }
 footer .glyphicon:hover
 {
     font-size:  27px;
-}
-#footer{
-    text-align: center;
 }
