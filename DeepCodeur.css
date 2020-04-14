@@ -21,7 +21,7 @@ h1, h2, h3, h4{
 
 
 h1{    
-    font-family: "Crete Round", serif;
+    font-family: "Crete Round", sans-serif;
     font-size: 45px;    
 }
 
@@ -147,7 +147,6 @@ header nav ul li a
     padding:auto;
     text-align:center;
     border-radius: 15px;
-    margin-left: 250px;
     margin-top: 67px;
 }
 #micro{
@@ -553,6 +552,10 @@ footer h5
 {
     margin-bottom: 20px;
 }
+/* NEWSLETTER */
+.newsletter{
+    text-align: center;
+}
 /* CONTACTS */
 
 #contact
@@ -652,6 +655,7 @@ footer h1
     color: #777;
     
 }
+
 footer .glyphicon
 {
     font-size:  25px;
@@ -661,6 +665,7 @@ footer .glyphicon
     height: 30px;
 }
 footer .glyphicon:hover
+
 {
     font-size:  27px;
 }
