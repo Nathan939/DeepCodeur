@@ -21,3 +21,7 @@ You just have to support and describe your website project.
 
 ## Getting Started
  To use the service just go to the site and follow the instructions.
+
+## Author
+**Etienne Legallic**
+**Nathan Martinelli**
