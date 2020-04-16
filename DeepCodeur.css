@@ -647,13 +647,10 @@ input[type="text"]
 
 
 /* FOOTER */
-
 footer
 {
-    
     height: 312px;
     background-color: #444;
-    
 }
 
 footer h1
@@ -679,7 +676,6 @@ footer .glyphicon
 {
     font-size:  25px;
     text-align: center;
-    padding-left: 421px;
     color: #d82c2e;
     height: 30px;
 }
