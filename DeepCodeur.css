@@ -168,8 +168,9 @@ header nav ul li a
     margin-top: 67px;
 }
 #micro{
-    width: 113px;
-    height: 102px;
+    width: 153px;
+    margin-bottom: 88px;
+    height: 182px;
 }
 
 #logo{
@@ -179,7 +180,7 @@ header nav ul li a
 }
 
 #main-image{    
-    height: 1180px;
+    height: 1380px;
     background: content-box;    
     background-color: #efefef;
 }
@@ -199,7 +200,7 @@ header nav ul li a
 
 .button-1
 {
-    width: 120px;
+    width: 180px;
     height: 50px;
     display: block;
     color: #fff;
