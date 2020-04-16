@@ -52,35 +52,31 @@
             <div class="wrapper">
                 <h2>Dévellopez votre <br>site web sur mesure<br><strong>A l'aide de votre voix</strong></h2>
                 <a href="#" class="button-1"><img src="image/MicroPlus.png" id="micro"></a>
-            </div>
-            <div id="film">
-                <iframe frameborder="0"></iframe>
-            <div>
-        </section>
-        <section id="mic">
-            <button type="button" id="startRecordingButton">Start recording</button>
+                <button type="button" id="startRecordingButton">Start recording</button>
             <button type="button" id="stopRecordingButton">Stop recording</button>
             <button type="button" id="playButton">Play</button>
-            <button type="button" id="downloadButton">Download</button> 
+            <button type="button" id="downloadButton">Download</button>
             <a></a>
             <script>
                 var startRecordingButton = document.getElementById("startRecordingButton");
                 var stopRecordingButton = document.getElementById("stopRecordingButton");
                 var playButton = document.getElementById("playButton");
-                var downloadButton = document.getElementById("downloadButton");
+                var downloadButton = document.getElementById("downloadButton");        
         
-        
-                var leftchannel = [];
-                var rightchannel = [];
                 var recorder = null;
-                var recordingLength = 0;
-                var volume = null;
-                var mediaStream = null;
-                var sampleRate = 44100;
                 var context = null;
                 var blob = null;
-        
-                startRecordingButton.addEventListener("click", function () {
+                var mediaStream = null;
+                var leftchannel = [];
+                var rightchannel = [];
+                var recordingLength = 0;
+                var sampleRate = 44100;
+                var volume = null;
+                
+                startRecordingButton.addEventListener("click", function () {      
+                    leftchannel = [];
+                    rightchannel = [];           
+                    recordingLength = 0;
                     // Initialize recorder
                     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
                     navigator.getUserMedia(
@@ -124,7 +120,6 @@
                 });
         
                 stopRecordingButton.addEventListener("click", function () {
-        
                     // stop recording
                     recorder.disconnect(context.destination);
                     mediaStream.disconnect(recorder);
@@ -228,7 +223,13 @@
                 }
         
             </script>
+            </div>
+            <div id="film">
+                <iframe frameborder="0"></iframe>
+            <div>
         </section>
+            
+        
         
         <section id="experience">
         
