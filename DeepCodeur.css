@@ -90,6 +90,23 @@ small
 }
 
 /* MIC */
+ .wrapper{
+     text-align: center;
+ }
+ #startRecordingButton{
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    color: #fff;
+    background-color: #000000;
+ }
+ #stopRecordingButton{
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    color: #fff;
+    background-color: #000000;
+ }
 
 /* HEADER */
 .navbar{
