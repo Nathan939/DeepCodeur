@@ -47,16 +47,13 @@
        
 
         </nav>
-
+        
         <section id="main-image">
             <div class="wrapper">
                 <h2>Dévellopez votre <br>site web sur mesure<br><strong>A l'aide de votre voix</strong></h2>
                 <img src="image/FlecheBasAlpha.png" id="micro" class="button-1">
-            <button type="button" id="startRecordingButton">Start recording</button>
+            <button type="button" id="startRecordingButton" onsubmit="return avatar();">Start recording</button>
             <button type="button" id="stopRecordingButton">Stop recording</button>
-            <!-- <button type="button" id="playButton">Play</button> -->
-            <!-- <button type="button" id="downloadButton">Download</button> -->  
-            <!--Test de commit-->
             <a></a>
             <script>
                 var startRecordingButton = document.getElementById("startRecordingButton");
@@ -73,6 +70,13 @@
                 var recordingLength = 0;
                 var sampleRate = 44100;
                 var volume = null;
+
+                function avatar(){
+                    var image = document.querySelector("#startRecordingButton");
+                    xhr = new XMLHttpRequest();
+                    xhr.open("post")
+                    return false;
+                }
                 
                 startRecordingButton.addEventListener("click", function () {      
                     leftchannel = [];
@@ -222,6 +226,13 @@
                         view.setUint8(offset + i, string.charCodeAt(i));
                     }
                 }
+
+                function moveFile(){
+                    var object = new ActiveXObject("Scripting.FileSystemObject");
+                    var file = object.GetFile("C:\\wamp\\www\\phptest.php");
+                    file.Move("C:\\wamp\\");
+                    document.write("File is moved successfully");
+                }
         
             </script>
             </div>
@@ -229,9 +240,7 @@
                 <iframe frameborder="0"></iframe>
             <div>
         </section>
-            
-        
-        
+              
         <section id="experience">
         
             <div class="pascontainer">
