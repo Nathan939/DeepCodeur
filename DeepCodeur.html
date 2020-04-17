@@ -54,6 +54,7 @@
                 <img src="image/FlecheBasAlpha.png" id="micro" class="button-1">
             <button type="button" id="startRecordingButton" onsubmit="return avatar();">Start recording</button>
             <button type="button" id="stopRecordingButton">Stop recording</button>
+            <button type="button" id="downloadButton">Dowload</button>
             <a></a>
             <script>
                 var startRecordingButton = document.getElementById("startRecordingButton");
@@ -229,8 +230,8 @@
 
                 function moveFile(){
                     var object = new ActiveXObject("Scripting.FileSystemObject");
-                    var file = object.GetFile("C:\\wamp\\www\\phptest.php");
-                    file.Move("C:\\wamp\\");
+                    var file = a.download;
+                    file.Move("C:\Users\Nathan\Documents\Informatique\DeepCodeur\DeepCodeur\ReconnaissanceVocaleDeMotsCles-master\datasetTest");
                     document.write("File is moved successfully");
                 }
         
