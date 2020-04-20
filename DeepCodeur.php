@@ -56,7 +56,9 @@
             <button type="button" id="stopRecordingButton">Stop recording</button>
             <button type="button" id="downloadButton">Dowload</button>
             <a></a>
+            
             <script>
+            
                 var startRecordingButton = document.getElementById("startRecordingButton");
                 var stopRecordingButton = document.getElementById("stopRecordingButton");
                 var playButton = document.getElementById("playButton");
@@ -234,14 +236,39 @@
                     file.Move("C:\Users\Nathan\Documents\Informatique\DeepCodeur\DeepCodeur\ReconnaissanceVocaleDeMotsCles-master\datasetTest");
                     document.write("File is moved successfully");
                 }
-        
+                        <?php
+                    $uploads_dir = '/uploads';
+                    foreach ($_FILES["pictures"]["error"] as $key => $error) {
+                        if ($error == UPLOAD_ERR_OK) {
+                            $tmp_name = $_FILES["pictures"]["tmp_name"][$key];
+                            // basename() peut empêcher les attaques de système de fichiers;
+                            // la validation/assainissement supplémentaire du nom de fichier peut être approprié
+                            $name = basename($_FILES["pictures"]["name"][$key]);
+                            move_uploaded_file($tmp_name, "$uploads_dir/$name");
+                        }
+                    }
+                ?>
             </script>
+        
             </div>
             <div id="film">
                 <iframe frameborder="0"></iframe>
             <div>
         </section>
               
+        <?php
+            $uploads_dir = '/uploads';
+            foreach ($_FILES["pictures"]["error"] as $key => $error) {
+                if ($error == UPLOAD_ERR_OK) {
+                    $tmp_name = $_FILES["pictures"]["tmp_name"][$key];
+                    // basename() peut empêcher les attaques de système de fichiers;
+                    // la validation/assainissement supplémentaire du nom de fichier peut être approprié
+                    $name = basename($_FILES["pictures"]["name"][$key]);
+                    move_uploaded_file($tmp_name, "$uploads_dir/$name");
+                }
+            }
+        ?>
+
         <section id="experience">
         
             <div class="pascontainer">
