@@ -107,7 +107,13 @@ small
     color: #fff;
     background-color: #000000;
  }
-
+#upload{
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    color: #fff;
+    background-color: #000000;
+}
 /* HEADER */
 .navbar{
     background-color: white;
