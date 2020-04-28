@@ -31,8 +31,8 @@ You just have to support and describe your website project.
 It is also necessary to modify the upload.js file by replacing the urls by your own urls.
 
 ### Django
-You need to download django by:
-pip install django
+You need to download django by: 
+pip install -r requirements.txt
 
 ## Author
 **Etienne Legallic**
