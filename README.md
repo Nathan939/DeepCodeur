@@ -20,7 +20,19 @@ You just have to support and describe your website project.
 > Today, DeepCodeur is just a web-site but in the future he'll be capable of much more.
 
 ## Getting Started
- To use the service just go to the site and follow the instructions.
+### Local serveur
+ To use the service you need a local serveur and modify the httpd.conf file like this:
+ <IfModule mod_headers.c>
+	# Accept cross-domain requests
+	Header always set Access-Control-Allow-Origin "*"
+	Header always set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+It is also necessary to modify the upload.js file by replacing the urls by your own urls.
+
+### Django
+You need to download django by:
+pip install django
 
 ## Author
 **Etienne Legallic**
