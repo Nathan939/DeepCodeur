@@ -20,8 +20,54 @@ You just have to support and describe your website project.
 > Today, DeepCodeur is just a web-site but in the future he'll be capable of much more.
 
 ## Getting Started
- To use the service just go to the site and follow the instructions.
+ ### Local serveur
+ > 1. Installing a local server like xampp: (https://www.apachefriends.org/fr/download.html)
+ > 2. Edit the htpd.conf file to get this:
+ ```sh
+    <IfModule mod_headers.c>
+        Header always set Access-Control-Allow-Origin "*"
+        Header always set Access-Control-Allow-Headers "Content-Type"
+    </IfModule>
+ ```
+ > 3. Edit the upload.js like this:
+ ```sh
+        var commande = new FormData();
+        commande.append("couleur", "rouge");
+        commande.append("pointure", "43");
+        // Envoi de l'objet FormData au serveur
+        ajaxPost("your url", commande,
+            function (reponse) {
+                // Affichage dans la console en cas de succès
+                console.log("Commande envoyée au serveur");
+            }
+        );
+        var form = document.querySelector("form");
+        // Gestion de la soumission du formulaire
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Récupération des champs du formulaire dans l'objet FormData
+            var data = new FormData(form);
+            // Envoi des données du formulaire au serveur
+            // La fonction callback est ici vide
+            ajaxPost("your url", data, function () {});
+        });
+ ```
 
+ ### Django
+ We use Django to run python scripts on our website.
+ > 1. Django is a python framework so you need python (https://www.python.org/downloads/)
+ > 2. Open a new terminal and create a virtual environment like this:
+ ```sh
+    python3 -m venv myvenv
+  ```
+> 3. Then you need the latest version of pip:
+```sh
+    python -m pip install --upgrade pip
+```
+> 5. Finally install django:
+```sh
+    pip install -r requirements.txt
+```
 ## Author
-**Etienne Legallic**
-**Nathan Martinelli**
+- **Etienne Legallic**
+- **Nathan Martinelli**
