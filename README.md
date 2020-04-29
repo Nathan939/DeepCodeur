@@ -58,9 +58,13 @@ You just have to support and describe your website project.
  > 1. Django is a python framework so you need python (https://www.python.org/downloads/)
  > 2. Open a new terminal and create a virtual environment like this:
  ```sh
-    python3 -m venv myvenv
+    python3 -m venv NameOfEnvironment
   ```
-> 3. Then you need the latest version of pip:
+> 3. Activate your environment :
+```sh
+    NameOfEnvironment\Scripts\activate
+```
+> 4. Then you need the latest version of pip:
 ```sh
     python -m pip install --upgrade pip
 ```
