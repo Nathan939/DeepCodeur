@@ -2,8 +2,9 @@
 
 <html>
 
+    {% load static %}
+
     <head>
-    
         <title>DeepCodeur</title>
         <link rel="icon" type="image/png" href="image/RedAndBlack.ico" />
         <meta charset="utf-8"/>
@@ -12,7 +13,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="DeepCodeur.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/DeepCodeur.css' %}" />
         <script src="script.js"></script>
     </head>
     
@@ -32,7 +33,7 @@
                         </button>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
-                        <img src="image/RedAndBlack.png" id="logo">
+                        <img src="{% static 'blog/image/RedAndBlack.png' %}" id="logo">
                         <h1><span class="orange">[</span>Deep Codeur<span class="orange">]</span></h1>
                         <ul id="features">
                             <li><a href="#newsletter">Newsletter</a></li>
@@ -52,7 +53,7 @@
             <div class="wrapper">
                 <form>
                     <h2>Dévellopez votre <br>site web sur mesure<br><strong>A l'aide de votre voix</strong></h2>
-                <img src="image/FlecheBasAlpha.png" id="micro" class="button-1">
+                <img src="{% static 'blog/image/FlecheBasAlpha.png' %}" id="micro" class="button-1">
                 <button id="startRecordingButton">Start recording</button>
                 <button id="stopRecordingButton">Stop recording</button>
                 <input type="submit" value="upload" id="upload">

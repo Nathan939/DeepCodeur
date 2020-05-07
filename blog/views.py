@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import loader
 
 # Create your views here.
 from django.http import HttpResponse
@@ -6,6 +7,10 @@ from django.shortcuts import render
 
 from datetime import datetime
 from django.shortcuts import render
+
+def index(request):
+    template = loader.get_template('blog/index.html')
+    return HttpResponse(template.render(request=request))
 
 def date_actuelle(request):
     return render(request, 'blog/date.html', {'date': datetime.now()})
