@@ -14,7 +14,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/DeepCodeur.css' %}" />
-        <script src="script.js"></script>
+        <script src="{% static 'blog/js/script.js' %}"></script>
     </head>
     
    
@@ -59,8 +59,8 @@
                 <input type="submit" value="upload" id="upload">
             
         
-                <script src="ajax.js"></script>
-                <script src="upload.js"></script>
+                <script src="{% static 'blog/js/ajax.js' %}"></script>
+                <script src="{% static 'blog/js/upload.js' %}"></script>
             
             <script>
         var startRecordingButton = document.getElementById("startRecordingButton");
@@ -259,8 +259,8 @@
                 <input type="submit" value="Votez">
             </form>
 
-            <script src="ajax.js"></script>
-            <script src="upload.js"></script>
+            <script src="{% static 'blog/js/ajax.js' %}"></script>
+            <script src="{% static 'blog/js/upload.js' %}"></script>
         </section>
         
             <div class="pascontainer">
