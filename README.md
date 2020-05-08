@@ -72,6 +72,10 @@ You just have to support and describe your website project.
 ```sh
     pip install -r requirements.txt
 ```
+
+### Pocketsphinx 
+We use Pocketsphinx to convert wav files to JSON files, because the audio files recorded on the web site are in wav format and we have to convert them to json format for the uploads (https://pypi.org/project/pocketsphinx/) :
+> pip install --upgrade pocketsphinx.
 ## Author
-- **Etienne Legallic**
+- **Etienne Legallic** 
 - **Nathan Martinelli**

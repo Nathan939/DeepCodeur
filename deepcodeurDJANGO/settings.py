@@ -126,5 +126,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'   # Qui devrait déjà être la configuration par défaut
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "/static"),
+    os.path.join(BASE_DIR, "static"),
 )
