@@ -22,3 +22,9 @@ echo.
 echo Installation de MatPlotLib
 conda install matplotlib
 echo.
+echo Installation de Pillow
+conda install Pillow
+echo.
+echo Installation de pyaudio
+conda install pyaudio
+echo.

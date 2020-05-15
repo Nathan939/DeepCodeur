@@ -20,5 +20,6 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('deepcodeur', views.index),
+    path('', views.index),
+    path('api/analyze', views.analyze_sound),
 ]
