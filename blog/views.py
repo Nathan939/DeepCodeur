@@ -15,6 +15,24 @@ def index(request):
 def date_actuelle(request):
     return render(request, 'blog/date.html', {'date': datetime.now()})
 
+def envoi(request):
+    import wave
+    import shutil
+
+    nchannels = 2
+    sampwidth = 2
+    framerate = 8000
+    nframes = 100
+    name  = 'output.wav'
+    audio = wave.open(name, 'wb')
+    audio.setnchannels(nchannels)
+    audio.setsampwidth(sampwidth)
+    audio.setframerate(framerate)
+    audio.setnframes(nframes)
+    blob = open("original.wav").read() # tel que `blob.read()`
+    audio.writeframes(blob)
+
+    shutil.move("localisation fichier a deplacer","fichier déplacé")
 
 def addition(request, nombre1, nombre2):    
     total = nombre1 + nombre2
