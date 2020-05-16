@@ -54,15 +54,16 @@
                 <form>
                     <h2>Dévellopez votre <br>site web sur mesure<br><strong>A l'aide de votre voix</strong></h2>
                 <img src="{% static 'blog/image/FlecheBasAlpha.png' %}" id="micro" class="button-1">
-                <button id="startRecordingButton">Start recording</button>
-                <button id="stopRecordingButton">Stop recording</button>
-                <input type="submit" value="upload" id="upload">
+                <button id="startRecordingButton" type="button">Start recording</button>
+                <button id="stopRecordingButton" type="button">Stop recording</button>
+                <input type="submit" value="Upload" id="upload">
             
         
-                <script src="{% static 'blog/js/ajax.js' %}"></script>
-                <script src="{% static 'blog/js/upload.js' %}"></script>
+                <!--script src="{% static 'blog/js/ajax.js' %}"></script>
+                <script src="{% static 'blog/js/upload.js' %}"></script-->
             
             <script>
+
         var startRecordingButton = document.getElementById("startRecordingButton");
         var stopRecordingButton = document.getElementById("stopRecordingButton");
         var playButton = document.getElementById("playButton");
@@ -81,13 +82,16 @@
 
         startRecordingButton.addEventListener("click", function () {
             // Initialize recorder
-            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-            navigator.getUserMedia(
+            navigator.mediaDevices.getUserMedia(
             {
                 audio: true
-            },
-            function (e) {
+            }).then(
+                function (e) {
                 console.log("user consent");
+
+                leftchannel = [];
+                rightchannel = [];
+                recordingLength = 0;
 
                 // creates the audio context
                 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -116,10 +120,10 @@
                 // we connect the recorder
                 mediaStream.connect(recorder);
                 recorder.connect(context.destination);
-            },
-                        function (e) {
-                            console.error(e);
-                        });
+            }).catch(
+                function (e) {
+                console.error(e);
+                });
         });
 
         stopRecordingButton.addEventListener("click", function () {
@@ -165,11 +169,20 @@
                 index += 2;
             }
 
-            // our final blob
+            var oReq = new XMLHttpRequest();
+            oReq.open("POST", "http://localhost:8000/api/envoi", true);
+            oReq.onload = function (oEvent) {
+                let echo = oEvent.currentTarget.response;
+                console.log(echo)
+                document.getElementById("echo").innerHTML = echo;
+            };
+
             blob = new Blob([view], { type: 'audio/wav' });
+
+            oReq.send(blob);
         });
 
-        playButton.addEventListener("click", function () {
+        /*playButton.addEventListener("click", function () {
             if (blob == null) {
                 return;
             }
@@ -193,7 +206,7 @@
             a.download = "sample.wav";
             a.click();
             window.URL.revokeObjectURL(url);
-        });
+        });*/
 
         function flattenArray(channelBuffer, recordingLength) {
             var result = new Float32Array(recordingLength);
@@ -228,6 +241,8 @@
 
     </script>
                 </form>
+            </div>
+            <div id="echo">
             </div>
             <div id="film">
                 <iframe frameborder="0"></iframe>
