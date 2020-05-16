@@ -20,6 +20,11 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', views.index),
     path('api/envoi', views.envoi),
+=======
+    path('deepcodeur', views.index),
+    path('envoi', views.envoi),
+>>>>>>> 4521681dd510f30c2e590c30b0fdfdb4ddeb2e7d
 ]
