@@ -58,17 +58,10 @@
                 <button id="stopRecordingButton" type="button">Stop recording</button>
                 <input type="submit" value="Upload" id="upload">
             
-        
-                <!--script src="{% static 'blog/js/ajax.js' %}"></script>
-                <script src="{% static 'blog/js/upload.js' %}"></script-->
-            
             <script>
 
         var startRecordingButton = document.getElementById("startRecordingButton");
         var stopRecordingButton = document.getElementById("stopRecordingButton");
-        var playButton = document.getElementById("playButton");
-        var downloadButton = document.getElementById("downloadButton");
-
 
         var leftchannel = [];
         var rightchannel = [];
@@ -181,43 +174,6 @@
 
             oReq.send(blob);
         });
-
-        /*playButton.addEventListener("click", function () {
-            if (blob == null) {
-                return;
-            }
-
-            var url = window.URL.createObjectURL(blob);
-            var audio = new Audio(url);
-            audio.play();
-        });
-
-        downloadButton.addEventListener("click", function () {
-            if (blob == null) {
-                return;
-            }
-
-            var url = URL.createObjectURL(blob);
-
-            var a = document.createElement("a");
-            document.body.appendChild(a);
-            a.style = "display: none";
-            a.href = url;
-            a.download = "sample.wav";
-            a.click();
-            window.URL.revokeObjectURL(url);
-        });*/
-
-        function flattenArray(channelBuffer, recordingLength) {
-            var result = new Float32Array(recordingLength);
-            var offset = 0;
-            for (var i = 0; i < channelBuffer.length; i++) {
-                var buffer = channelBuffer[i];
-                result.set(buffer, offset);
-                offset += buffer.length;
-            }
-            return result;
-        }
 
         function interleave(leftChannel, rightChannel) {
             var length = leftChannel.length + rightChannel.length;
