@@ -19,6 +19,7 @@ with open('resultat.txt') as f:
         for rowidx in range(worksheet.nrows):
             if worksheet.cell(rowidx, 0).value == wrd:
                 print("Oui, ", wrd, " est une balise : ", worksheet.cell(rowidx, 1), " ", rowidx)
+                
         if wrd in worksheet.col(0):
             print("Est dans la liste", worksheet.col(0))
                 
