@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import time
-
+"""
 links = []
 
 for i in range(26):
@@ -24,7 +24,7 @@ with open('urls.txt', 'w') as file:
     for link in links:
         file.write(link + '\n')
 
-
+"""
 with open('urls.txt', 'r') as inf:
     with open('pays.csv', 'w') as outf:
         outf.write('pays, population\n')
