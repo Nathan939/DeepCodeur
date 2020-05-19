@@ -3,7 +3,7 @@ from yattag import Doc
 
 import os
 
-wb = xlrd.open_workbook(os.path.join(r'C:\Users\Etienne\Desktop\DeepCodeur v2\DeepCodeur\_Tests', 'Tableau.xlsx'))
+wb = xlrd.open_workbook(os.path.join(r'C:\xampp\htdocs\deepcodeurDJANGO\_Tests', 'Tableau.xlsx'))
 worksheet = wb.sheet_by_name('ListeHTML')
 
 doc, tag, text = Doc().tagtext()
@@ -22,6 +22,8 @@ with open('resultat.txt') as f:
         if wrd in worksheet.col(0):
             print("Est dans la liste", worksheet.col(0))
                 
+
+
                 
 
 print("\n", doc.getvalue())
