@@ -42,7 +42,7 @@ with open('urls.txt', 'r') as inf:
             time.sleep(3)
 """
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-
+"""
 url = 'http://localhost:8000/static/blog/image/RedAndBlack.png'
 response = requests.get(url)
 
@@ -58,8 +58,8 @@ def downloadFile(AFileName):
         print("Downloaded :",  AFileName.split("/")[-1], "from", AFileName)
     return
 
-downloadFile("http://localhost:8000/static/blog/audios/test.wav")
-
+#downloadFile("http://localhost:8000/static/blog/audios/test.wav")
+"""
 ydl_opts = {
     'format': 'bestaudio/best',
     'outtmpl': SITE_ROOT + '/Audios/%(title)s.%(ext)s',
@@ -71,4 +71,4 @@ ydl_opts = {
 }
 
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    ydl.download(['YOUR YOUTUBE URL'])
+    ydl.download(['https://www.youtube.com/watch?v=ACPVLkRzSN0'])
