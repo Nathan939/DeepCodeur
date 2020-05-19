@@ -38,6 +38,7 @@ def envoi(request):
     except sr.UnknownValueError:
         result = "JE N'AI PAS COMPRIS"
     print(result)
+    # Crer un fichier txt avec le résultat de l'enregistrement
     f = open("resultat.txt", "w+")
     f.write(result.replace(' ', '\n'))
     f.close()
