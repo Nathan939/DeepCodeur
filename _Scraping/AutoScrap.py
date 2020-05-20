@@ -10,6 +10,8 @@ response = requests.get(url)
 
 timeout = 60
 timeout_start = time.time()
+NUMBER_OF_FILES = 50
+
 URLs = []
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
@@ -21,6 +23,8 @@ if response.ok:
     for link in links:
         if len(link.get('href')) > 2 and link.get('href')[1] == 'w' and link.get('href') not in URLs:
             URLs.append(link.get('href'))
+        if len(URLs) >= NUMBER_OF_FILES:
+            break
 
 ydl_opts = {
 'format': 'bestaudio/best',
@@ -35,7 +39,7 @@ ydl_opts = {
 while time.time() < timeout_start + timeout:
     if len(URLs) == 0:
         break
-
+    print(time.time())
     N = str(choice(URLs))
     URLs.remove(N)
 
