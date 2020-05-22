@@ -3,7 +3,7 @@ import imgaug as ia
 import imgaug.augmenters as iaa
 
 # random example images
-images = np.random.randint(0, 255, (16, 128, 128, 3), dtype=np.uint8)
+images = './Data/Enregistrement_vocal/HTML'
 
 # Sometimes(0.5, ...) applies the given augmenter in 50% of all cases,
 # e.g. Sometimes(0.5, GaussianBlur(0.3)) would blur roughly every second image.
