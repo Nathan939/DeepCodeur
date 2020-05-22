@@ -34,7 +34,7 @@ def envoi(request):
         result = "JE N'AI PAS COMPRIS" """
     # Pocket Sphinx
     try:
-        result = r.recognize_sphinx(audio, language="fr-FR")
+        result = r.recognize_sphinx(audio)
     except sr.UnknownValueError:
         result = "JE N'AI PAS COMPRIS"
     print(result)
