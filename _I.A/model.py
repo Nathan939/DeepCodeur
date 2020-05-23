@@ -33,8 +33,6 @@ def wav2spectrum():
     ax.set(xlabel='Time (s)', ylabel='Sound Amplitude')
     plt.show()
 
-    %%time
-
     for file in range(0, len(audio_files), 1):
         audio, sfreq = lr.load(audio_files[file]) #element variable
         time = np.arange(0, len(audio)) / sfreq
