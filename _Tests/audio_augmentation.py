@@ -11,4 +11,4 @@ chain = audaugio.CombinatoricChain(audaugio.PitchShiftAugmentation(1),
 augmented_audio = chain(y, sr)
 
 for i, a in enumerate(augmented_audio):
-    librosa.output.write_wav("output/{0}.wav".format(i), a, sr)
+    librosa.output.write_wav("testAudio/{0}.wav".format(i), a, sr)

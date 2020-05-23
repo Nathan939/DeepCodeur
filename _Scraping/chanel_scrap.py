@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import youtube_dl
 from pydub import AudioSegment
+from pydub.silence import split_on_silence
 import os
 import time
 
@@ -12,12 +13,6 @@ NB_OF_VID = 20 # Number of vids
 videos = []
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-
-chunk1 = 1 * 1000
-chunk2 = 5 * 1000
-chunk3 = 8 * 1000
-chunk4 = 10 * 1000
-chunk5 = 12 * 1000
 
 def downoload_audio(url, nom):
     AudioPath = SITE_ROOT + '/Audios/' + nom
@@ -35,16 +30,30 @@ def downoload_audio(url, nom):
         'preferredquality': '192',
     }],
     }
-
+    
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         ydl.download(["https://www.youtube.com" + url])
     print('\nDownloaded :', url, '\n')
+    
+    sound_file = AudioSegment.from_wav(AudioPath + '/' + nom + '.wav')
+    
+    try:
+        audio_chunks = split_on_silence(sound_file, 
+            # must be silent for at least half a second
+            min_silence_len=500, 
 
-    sound = AudioSegment.from_file(AudioPath + '/' + nom + '.wav')
+            # consider it silent if quieter than -16 dBFS
+            silence_thresh=-16
+        )
+    except UnboundLocalError:
+        print('\nBad audio')
 
-    for i in range(1, 5):
-        splited_audio = sound[globals()['chunk' + str(i)]:globals()['chunk' + str(i+1)]] 
-        splited_audio.export(AudioPath + '\\' + nom + str(i) + '.wav', format="wav")
+    for i, chunk in enumerate(audio_chunks):
+        out_file = AudioPath + "//chunk{0}.wav".format(i)
+        print ("exporting"), out_file
+        chunk.export(out_file, format="wav")
+
+downoload_audio('/watch?v=T5yquPjCSFA', "Covid-19 l'Amérique latine, nouvel épicentre de la pandémie, selon l'OMS")
 
 i = 0
 

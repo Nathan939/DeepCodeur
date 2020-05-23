@@ -61,3 +61,4 @@ target/
 Scripts/
 Lib/
 pyvenv.cfg
+share/
