@@ -1,5 +1,6 @@
 import librosa as lr
 import numpy as np
+import tensorflow as tf
 import pandas as pd
 import matplotlib.pyplot as plt
 from glob import glob
@@ -17,8 +18,8 @@ def decompresseur():
         # extraire tous les fichiers vers un autre répertoire
         zip.extractall('zip_destination')
 
-    y, sr = librosa.load(librosa.util.example_audio_file())
-    librosa.feature.mfcc(y=None, sr=22050, S=None, n_mfcc=20, dct_type=2, norm='ortho', lifter=0, **kwargs)
+    y, sr = lr.load(lr.util.example_audio_file())
+    lr.feature.mfcc(y=None, sr=22050, S=None, n_mfcc=20, dct_type=2, norm='ortho', lifter=0, **kwargs)
 
 
 def wav2spectrum():

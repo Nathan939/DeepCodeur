@@ -62,3 +62,4 @@ Scripts/
 Lib/
 pyvenv.cfg
 share/
+logs/

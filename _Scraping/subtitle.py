@@ -21,9 +21,8 @@ def video_suivante(video_id, transcribe):
     if response.ok:
         for text in transcribe:
             for word in dic:
-                if word in text['text']:
+                if word.lower() in text['text'].lower():
                     interesting_words = True
-                    break
 
         if interesting_words == True:
             audio_path = SITE_ROOT + '/Audios/' + video_id
@@ -46,12 +45,12 @@ def video_suivante(video_id, transcribe):
             sound = AudioSegment.from_wav(str(audio_path) + '/' + video_id + ".wav")
             for text in transcribe:
                 for word in dic:
-                        if word in text['text']:
+                        if word.lower() in text['text'].lower():
                             print('Found word')
                             debut = text['start'] * 1000
                             fin = debut + text['duration'] * 1000
                             duree = sound[debut:fin]
-                            duree.export(audio_path + '/' + video_id + str(debut) + ' - subtitle : {0}.wav'.format(word), format='wav')
+                            duree.export(audio_path + '/' + str(debut) + ' - subtitle '+ word.lower() + '.wav', format='wav')
         else:
             print("Mais il n'y a pas les mots qui nous intéressent")
 
@@ -69,11 +68,16 @@ while len(audios_all) < NB_AUDIOS:
                 transcript = YouTubeTranscriptApi.get_transcript(video_id, ['fr'])
                 print("Cette vidéo a des sous-titres en français")
 
-                video_suivante(video_id, transcript)
-
-                audios_all.append(link)
+                if link not in audios_all:
+                    video_suivante(video_id, transcript)
+                    audios_all.append(link)
+            
             except (NoTranscriptFound, TranscriptsDisabled):
                 print("No subtitle")
+
+            if len(audios_all) >= NB_AUDIOS:
+                break
+
     print("Et encore un tour !")
     time.sleep(2)               
                     
