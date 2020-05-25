@@ -1,5 +1,5 @@
 from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api._errors import (NoTranscriptFound, TranscriptsDisabled)
+from youtube_transcript_api._errors import (NoTranscriptFound, TranscriptsDisabled, NoTranscriptAvailable, VideoUnavailable)
 import youtube_dl
 from pydub import AudioSegment
 import requests
@@ -72,8 +72,8 @@ while len(audios_all) < NB_AUDIOS:
                     video_suivante(video_id, transcript)
                     audios_all.append(link)
             
-            except (NoTranscriptFound, TranscriptsDisabled):
-                print("No subtitle")
+            except (NoTranscriptFound, TranscriptsDisabled, NoTranscriptAvailable, VideoUnavailable, MemoryError):
+                print("Problème mais c'est pas très grave")
 
             if len(audios_all) >= NB_AUDIOS:
                 break
