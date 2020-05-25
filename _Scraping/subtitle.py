@@ -1,53 +1,79 @@
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api._errors import (NoTranscriptFound, TranscriptsDisabled)
+import youtube_dl
 from pydub import AudioSegment
-import io 
-from nltk.corpus import stopwords 
-from nltk.tokenize import word_tokenize 
 import requests
-from bs4 import BeatifulSoup
+from bs4 import BeautifulSoup
+import os
+import time
 
-transcribe = YouTubeTranscriptApi.get_transcript("f98j2fwJykc", languages=['fr', 'fr'])
+audios_all = []
+NB_AUDIOS = 50 # Nombre d'audios voulus
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 dic = {'A la ligne', 'Abreviation', 'Ajoute', 'Barre de progression', 'Bouton', 'Carte', 'Case', 'Cellule', 'Citaton','Code', 'Dans un cadre', 'Definition', 'Description', 'Ecris', 'Egal', 'En grand', 'En gras', 'Enregistrement', 'Entre', 'Fichier Audio', 'Formulaire', 'Groupe', 'Image', 'Implemente', 'Item', 'Legende', 'Lien', 'Liste a puce', 'Liste deroulante', 'Liste ordonee', 'Longue citation', 'Marque', 'Mettre en emphase', 'Objet', 'Paragraphe', 'Photo', 'Plug-in', 'Qui se diferencie', 'Redirection', 'Reduis', 'Regroupe', 'Retour a la ligne', 'Script', 'Sortie', 'Sous fenetre', 'Surligne', 'Tableau', 'Temps', 'Titre', 'Variable', 'Video'}
 
-for text in transcribe[0]:
-       for word in text['text']:
-            if word in dic:
-                five_seconds = 5 * 1000
-                debut = song[ten_seconds]
-                fin = song[-5000:]
-                duree = sound[int(début):int(fin)]
-                export = sound.export('subtitle', wav)
+def video_suivante(video_id, transcribe):
+    url = "https://www.youtube.com/watch?v=" + video_id
+    response = requests.get(url)
+    interesting_words = False
+    if response.ok:
+        for text in transcribe:
+            for word in dic:
+                if word in text['text']:
+                    interesting_words = True
+                    break
 
-                stop_words = set(stopwords.words('french')) 
-                file1 = open("frenchST.txt") 
-                line = file1.read()
-                words = line.split() 
-                for r in words: 
-                    if not r in stop_words: 
-                        appendFile = open('filteredtext.txt','a') 
-                        appendFile.write(" "+r) 
-                        appendFile.close() 
-                def video_suivante():
-                    url = 'https://www.youtube.com/watch?v=dRxh6pBEvSw'
-                    response = requests.get(url)
-                    if response.ok:
-                        soup = BeatifulSoup(response.txt, 'lxml')
-                        title = soup.find('a')
-                        title = int(title)
-                        random.random(title)
+        if interesting_words == True:
+            audio_path = SITE_ROOT + '/Audios/' + video_id
+
+            ydl_opts = {
+            'format': 'bestaudio/best',
+            'outtmpl': audio_path + '/' + video_id + '.%(ext)s',
+            'postprocessors': [{
+                'key': 'FFmpegExtractAudio',
+                'preferredcodec': 'wav',
+                'preferredquality': '192',
+            }],
+            }
+
             
-            elif word = False:
-                def video_suivante():
-                    pass
+            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([url])
+            print('\nDownloaded :', url, '\n')
 
-            else:
-                def video_suivante():
-                    pass
- 
+            sound = AudioSegment.from_wav(str(audio_path) + '/' + video_id + ".wav")
+            for text in transcribe:
+                for word in dic:
+                        if word in text['text']:
+                            print('Found word')
+                            debut = text['start'] * 1000
+                            fin = debut + text['duration'] * 1000
+                            duree = sound[debut:fin]
+                            duree.export(audio_path + '/' + video_id + str(debut) + ' - subtitle : {0}.wav'.format(word), format='wav')
+        else:
+            print("Mais il n'y a pas les mots qui nous intéressent")
+
+while len(audios_all) < NB_AUDIOS:
+    url_yt = 'https://www.youtube.com'
+    response = requests.get(url_yt)
+    if response.ok:
+        soup = BeautifulSoup(response.text, 'lxml')
+        liens = soup.findAll("a", {"class": "yt-ui-ellipsis"})
+
+        for link in liens:
+            try:
+                video_id = link.get('href').split("=")[-1]
                 
+                transcript = YouTubeTranscriptApi.get_transcript(video_id, ['fr'])
+                print("Cette vidéo a des sous-titres en français")
 
+                video_suivante(video_id, transcript)
 
-
-                
+                audios_all.append(link)
+            except (NoTranscriptFound, TranscriptsDisabled):
+                print("No subtitle")
+    print("Et encore un tour !")
+    time.sleep(2)               
                     

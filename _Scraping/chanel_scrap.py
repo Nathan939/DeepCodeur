@@ -1,10 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 import youtube_dl
+from youtube_transcript_api import YouTubeTranscriptApi
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
 import os
 import time
+import json
+import pprint
 
 hotwords = [x[0].split("\\")[-1] for x in os.walk('_I.A\Data\Enregistrement_vocal\HTML')]
 
@@ -15,6 +18,8 @@ videos = []
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 def downoload_audio(url, nom):
+    nom = nom.replace('?', ' ')
+
     AudioPath = SITE_ROOT + '/Audios/' + nom
     try:
         os.makedirs(AudioPath)
@@ -23,7 +28,7 @@ def downoload_audio(url, nom):
 
     ydl_opts = {
     'format': 'bestaudio/best',
-    'outtmpl': AudioPath + '/%(title)s.%(ext)s',
+    'outtmpl': AudioPath + '/' + nom + '.%(ext)s',
     'postprocessors': [{
         'key': 'FFmpegExtractAudio',
         'preferredcodec': 'wav',
@@ -45,15 +50,16 @@ def downoload_audio(url, nom):
             # consider it silent if quieter than -16 dBFS
             silence_thresh=-16
         )
+
+        for i, chunk in enumerate(audio_chunks):
+            out_file = AudioPath + "//chunk{0}.wav".format(i)
+            print ("exporting"), out_file
+            chunk.export(out_file, format="wav")
+
     except UnboundLocalError:
         print('\nBad audio')
 
-    for i, chunk in enumerate(audio_chunks):
-        out_file = AudioPath + "//chunk{0}.wav".format(i)
-        print ("exporting"), out_file
-        chunk.export(out_file, format="wav")
-
-downoload_audio('/watch?v=T5yquPjCSFA', "Covid-19 l'Amérique latine, nouvel épicentre de la pandémie, selon l'OMS")
+downoload_audio('/watch?v=z0M7_HPSi14', "How do fish make electricity? - Eleanor Nelsen")
 
 i = 0
 

@@ -1,0 +1,402 @@
+[
+    {
+        "duration": 7.0,
+        "start": 0.0,
+        "text": "Traducteur: Floriane Julou Relecteur: eric vautier"
+    },
+    {
+        "duration": 4.132,
+        "start": 8.113,
+        "text": "En 1800, l'explorateur Alexander von Humboldt"
+    },
+    {
+        "duration": 3.989,
+        "start": 12.245,
+        "text": "observa un banc d'anguilles \u00e9lectriques bondir hors de l'eau"
+    },
+    {
+        "duration": 3.6,
+        "start": 16.234,
+        "text": "pour se d\u00e9fendre contre des chevaux qui approchaient."
+    },
+    {
+        "duration": 4.601,
+        "start": 19.834,
+        "text": "L'histoire \u00e9tait si insolite que beaucoup pens\u00e8rent que Humboldt l'avait invent\u00e9e."
+    },
+    {
+        "duration": 4.361,
+        "start": 24.435,
+        "text": "Les poissons produisent de l'\u00e9lectricit\u00e9 plus souvent que l'on pourrait le croire a0;"
+    },
+    {
+        "duration": 4.139,
+        "start": 28.796,
+        "text": "et oui, les anguilles \u00e9lectriques sont une esp\u00e8ce de poisson."
+    },
+    {
+        "duration": 2.19,
+        "start": 32.935,
+        "text": "Sous l'eau, o\u00f9 la lumi\u00e8re est limit\u00e9e,"
+    },
+    {
+        "duration": 2.649,
+        "start": 35.125,
+        "text": "les signaux \u00e9lectriques sont des moyens de communiquer,"
+    },
+    {
+        "duration": 1.087,
+        "start": 37.774,
+        "text": "de naviguer,"
+    },
+    {
+        "duration": 4.831,
+        "start": 38.861,
+        "text": "de trouver (et parfois de paralyser) une proie."
+    },
+    {
+        "duration": 5.443,
+        "start": 43.692,
+        "text": "Pr\u00e8s de 350 esp\u00e8ces de poissons poss\u00e8dent des structures anatomiques sp\u00e9cialis\u00e9es"
+    },
+    {
+        "duration": 3.672,
+        "start": 49.135,
+        "text": "qui g\u00e9n\u00e8rent et d\u00e9tectent des signaux \u00e9lectriques."
+    },
+    {
+        "duration": 2.439,
+        "start": 52.807,
+        "text": "Ces poissons sont divis\u00e9s en deux groupes,"
+    },
+    {
+        "duration": 3.706,
+        "start": 55.246,
+        "text": "selon la quantit\u00e9 d'\u00e9lectricit\u00e9 qu'ils produisent."
+    },
+    {
+        "duration": 4.635,
+        "start": 58.952,
+        "text": "Les poissons faiblement \u00e9lectriques forment le premier groupe."
+    },
+    {
+        "duration": 2.819,
+        "start": 63.587,
+        "text": "Leurs organes \u00e9lectriques, situ\u00e9s pr\u00e8s de leur queue,"
+    },
+    {
+        "duration": 6.101,
+        "start": 66.406,
+        "text": "produisent jusqu'\u00e0 un volt d'\u00e9lectricit\u00e9, environ deux tiers d'une pile AA."
+    },
+    {
+        "duration": 2.09,
+        "start": 72.507,
+        "text": "Comment cela fonctionne-t-il a0?"
+    },
+    {
+        "duration": 3.571,
+        "start": 74.597,
+        "text": "Le cerveau du poisson envoie un signal, par le biais de son syst\u00e8me nerveux,"
+    },
+    {
+        "duration": 2.34,
+        "start": 78.168,
+        "text": "\u00e0 l'organe \u00e9lectrique qui est rempli"
+    },
+    {
+        "duration": 6.75,
+        "start": 80.508,
+        "text": "de centaines ou de milliers de cellules en forme de disque, appel\u00e9es \u00e9lectrocytes."
+    },
+    {
+        "duration": 4.18,
+        "start": 87.258,
+        "text": "Normalement, les \u00e9lectrocytes rejettent des ions sodium et potassium"
+    },
+    {
+        "duration": 5.369,
+        "start": 91.438,
+        "text": "pour maintenir une charge positive \u00e0 l'ext\u00e9rieur et n\u00e9gative \u00e0 l'int\u00e9rieur."
+    },
+    {
+        "duration": 3.113,
+        "start": 96.807,
+        "text": "Mais quand le message nerveux atteint l'\u00e9lectrocyte,"
+    },
+    {
+        "duration": 3.629,
+        "start": 99.92,
+        "text": "il incite les grilles ioniques \u00e0 s'ouvrir."
+    },
+    {
+        "duration": 4.16,
+        "start": 103.549,
+        "text": "Les ions positifs retournent \u00e0 l'int\u00e9rieur."
+    },
+    {
+        "duration": 4.32,
+        "start": 107.709,
+        "text": "Maintenant, un c\u00f4t\u00e9 de l'\u00e9lectrocyte est charg\u00e9 n\u00e9gativement \u00e0 l'ext\u00e9rieur"
+    },
+    {
+        "duration": 2.67,
+        "start": 112.029,
+        "text": "et positivement \u00e0 l'int\u00e9rieur."
+    },
+    {
+        "duration": 4.072,
+        "start": 114.699,
+        "text": "Mais le c\u00f4t\u00e9 oppos\u00e9 pr\u00e9sente un profil de charge inverse."
+    },
+    {
+        "duration": 2.649,
+        "start": 118.771,
+        "text": "Ces charges altern\u00e9es peuvent cr\u00e9er un courant,"
+    },
+    {
+        "duration": 5.071,
+        "start": 121.42,
+        "text": "transformant ainsi l'\u00e9lectrocyte en une pile biologique."
+    },
+    {
+        "duration": 4.158,
+        "start": 126.491,
+        "text": "L'\u00e9l\u00e9ment cl\u00e9 du pouvoir de ces poissons est la coordination des signaux nerveux,"
+    },
+    {
+        "duration": 4.382,
+        "start": 130.649,
+        "text": "qui permet \u00e0 chaque cellule d'arriver exactement au m\u00eame moment."
+    },
+    {
+        "duration": 6.049,
+        "start": 135.031,
+        "text": "Ces \u00e9lectrocytes agissent donc comme des milliers de piles en s\u00e9rie."
+    },
+    {
+        "duration": 3.243,
+        "start": 141.08,
+        "text": "Leurs petites charges s'additionnent et cr\u00e9ent un champ \u00e9lectrique"
+    },
+    {
+        "duration": 2.738,
+        "start": 144.323,
+        "text": "qui peut parcourir plusieurs m\u00e8tres."
+    },
+    {
+        "duration": 3.079,
+        "start": 147.061,
+        "text": "Des cellules enfouies sous la peau, appel\u00e9es \u00e9lectro-r\u00e9cepteurs,"
+    },
+    {
+        "duration": 2.981,
+        "start": 150.14,
+        "text": "permettent aux poissons de constamment sentir ce champ"
+    },
+    {
+        "duration": 4.901,
+        "start": 153.121,
+        "text": "et ses changements caus\u00e9s par l'environnement ou d'autres poissons."
+    },
+    {
+        "duration": 2.47,
+        "start": 158.022,
+        "text": "Le poisson-\u00e9l\u00e9phant, par exemple,"
+    },
+    {
+        "duration": 3.181,
+        "start": 160.492,
+        "text": "a un menton allong\u00e9 appel\u00e9 schnauzenorgan"
+    },
+    {
+        "duration": 2.43,
+        "start": 163.673,
+        "text": "qui est couvert d'\u00e9lectro-r\u00e9cepteurs."
+    },
+    {
+        "duration": 2.789,
+        "start": 166.103,
+        "text": "Il lui permet d'intercepter les signaux d'autres poissons,"
+    },
+    {
+        "duration": 1.9,
+        "start": 168.892,
+        "text": "d'estimer les distances,"
+    },
+    {
+        "duration": 3.001,
+        "start": 170.792,
+        "text": "de d\u00e9tecter la forme et la taille des objets \u00e0 proximit\u00e9,"
+    },
+    {
+        "duration": 5.008,
+        "start": 173.793,
+        "text": "et m\u00eame de d\u00e9terminer si un insecte enterr\u00e9 est mort ou vivant."
+    },
+    {
+        "duration": 2.501,
+        "start": 178.801,
+        "text": "Ce poisson, et d'autres faiblement \u00e9lectriques,"
+    },
+    {
+        "duration": 4.1,
+        "start": 181.302,
+        "text": "ne produisent pas assez d'\u00e9lectricit\u00e9 pour attaquer leur proie."
+    },
+    {
+        "duration": 3.171,
+        "start": 185.402,
+        "text": "C'est une capacit\u00e9 des poissons fortement \u00e9lectriques,"
+    },
+    {
+        "duration": 3.221,
+        "start": 188.573,
+        "text": "dont il existe peu d'esp\u00e8ces."
+    },
+    {
+        "duration": 4.598,
+        "start": 191.794,
+        "text": "Le poisson \u00e9lectrique le plus puissant est le poisson-couteau \u00e9lectrique,"
+    },
+    {
+        "duration": 4.121,
+        "start": 196.392,
+        "text": "plus connu sous le nom d'anguille \u00e9lectrique."
+    },
+    {
+        "duration": 4.887,
+        "start": 200.513,
+        "text": "Trois organes \u00e9lectriques recouvrent presque tout son corps de deux m\u00e8tres."
+    },
+    {
+        "duration": 1.954,
+        "start": 205.4,
+        "text": "Comme le poisson faiblement \u00e9lectrique,"
+    },
+    {
+        "duration": 3.606,
+        "start": 207.354,
+        "text": "l'anguille \u00e9lectrique utilise ses signaux pour naviguer et communiquer."
+    },
+    {
+        "duration": 3.724,
+        "start": 210.96,
+        "text": "Elle r\u00e9serve ses d\u00e9charges \u00e9lectriques les plus fortes pour chasser"
+    },
+    {
+        "duration": 5.589,
+        "start": 214.684,
+        "text": "gr\u00e2ce \u00e0 une attaque en deux phases pour identifier et neutraliser sa proie."
+    },
+    {
+        "duration": 3.722,
+        "start": 220.273,
+        "text": "Tout d'abord, elle \u00e9met deux ou trois impulsions fortes,"
+    },
+    {
+        "duration": 2.449,
+        "start": 223.995,
+        "text": "allant jusqu'\u00e0 600 a0volts."
+    },
+    {
+        "duration": 3.29,
+        "start": 226.444,
+        "text": "Elles stimulent les muscles de la proie, ce qui la fait se contracter"
+    },
+    {
+        "duration": 3.311,
+        "start": 229.734,
+        "text": "et g\u00e9n\u00e8re des vagues qui r\u00e9v\u00e8lent sa cachette."
+    },
+    {
+        "duration": 2.88,
+        "start": 233.045,
+        "text": "Une s\u00e9rie de d\u00e9charges rapides et \u00e0 haute tension"
+    },
+    {
+        "duration": 3.369,
+        "start": 235.925,
+        "text": "provoquent ensuite des contractions musculaires encore plus intenses."
+    },
+    {
+        "duration": 3.801,
+        "start": 239.294,
+        "text": "Cette anguille peut \u00e9galement s'enrouler de fa\u00e7on \u00e0 ce que l'\u00e9lectricit\u00e9"
+    },
+    {
+        "duration": 4.154,
+        "start": 243.095,
+        "text": "g\u00e9n\u00e9r\u00e9e \u00e0 chaque extr\u00e9mit\u00e9 de l'organe \u00e9lectrique soit cumul\u00e9e."
+    },
+    {
+        "duration": 3.69,
+        "start": 247.249,
+        "text": "L'attaque \u00e9lectrique finit par \u00e9puiser et immobiliser la proie,"
+    },
+    {
+        "duration": 3.951,
+        "start": 250.939,
+        "text": "et l'anguille \u00e9lectrique peut avaler son repas vivant."
+    },
+    {
+        "duration": 3.66,
+        "start": 254.89,
+        "text": "Les autres poissons fortement \u00e9lectriques sont le poisson-chat \u00e9lectrique,"
+    },
+    {
+        "duration": 2.385,
+        "start": 258.55,
+        "text": "qui peut envoyer 350 a0volts"
+    },
+    {
+        "duration": 2.971,
+        "start": 260.935,
+        "text": "avec un organe \u00e9lectrique occupant presque tout son torse,"
+    },
+    {
+        "duration": 5.11,
+        "start": 263.906,
+        "text": "et la raie \u00e9lectrique avec, de chaque c\u00f4t\u00e9 de sa t\u00eate, des organes \u00e9lectriques"
+    },
+    {
+        "duration": 3.83,
+        "start": 269.016,
+        "text": "en forme de rein qui produisent jusqu'\u00e0 220 a0volts."
+    },
+    {
+        "duration": 3.679,
+        "start": 272.846,
+        "text": "Un myst\u00e8re demeure dans le monde des poissons \u00e9lectriques a0:"
+    },
+    {
+        "duration": 2.911,
+        "start": 276.525,
+        "text": "pourquoi ne s'\u00e9lectrocutent-ils pas a0?"
+    },
+    {
+        "duration": 2.712,
+        "start": 279.436,
+        "text": "Il se peut que la taille d'un poisson fortement \u00e9lectrique"
+    },
+    {
+        "duration": 2.649,
+        "start": 282.148,
+        "text": "lui permette de r\u00e9sister \u00e0 ses propres chocs,"
+    },
+    {
+        "duration": 3.668,
+        "start": 284.797,
+        "text": "ou que le courant passe trop rapidement \u00e0 travers son corps."
+    },
+    {
+        "duration": 4.582,
+        "start": 288.465,
+        "text": "Il se pourrait que des prot\u00e9ines sp\u00e9ciales prot\u00e8gent les organes \u00e9lectriques,"
+    },
+    {
+        "duration": 4.91,
+        "start": 293.047,
+        "text": "mais en v\u00e9rit\u00e9, c'est un myst\u00e8re que la science n'a toujours pas r\u00e9solu."
+    }
+]
