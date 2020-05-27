@@ -1,8 +1,10 @@
+
 import numpy as np
 import pickle
 import os
 import math
 import helper
+
 
 def __extract_file__(fname):
     with open(fname, 'rb') as fo:
@@ -45,7 +47,11 @@ class Cifar(object):
         self.__batch_num__ = 0
         for i in range(math.ceil(len(self.__res__)/batch_size)):
             self.batches.append(self.__res__[i*batch_size:(i+1)*batch_size])
+<<<<<<< Updated upstream
         self.test_set = __extract_reshape_file__(os.path.join(dir, "test_batch"))
+=======
+        self.test_set = __extract_reshape_file__(os.path.join(dir, "test_batch")) # <- Added for test data
+>>>>>>> Stashed changes
 
     def batch(self, num):
         return self.batches[num]

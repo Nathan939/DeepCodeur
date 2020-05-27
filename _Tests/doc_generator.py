@@ -5,6 +5,12 @@ import xlrd
 def htlm_generate():
     doc, tag, text = Doc().tagtext()
 
+    if tag.open == True:
+        print(text)
+
+    else:
+        return f
+
     doc.asis('<!DOCTYPE html>')
     with tag('html'):
         with tag('head'):

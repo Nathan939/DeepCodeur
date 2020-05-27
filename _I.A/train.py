@@ -3,6 +3,10 @@ from tqdm import tqdm
 import tensorflow as tf
 import AlexNet
 import helper
+import numpy as np
+import pandas as pd
+import imgaug
+
 
 learning_rate = 0.001
 batch_size = 16
@@ -34,7 +38,7 @@ with tf.Session() as sess:
 
     for epoch in range(no_of_epochs):
         for batch in tqdm(cifar.batches,
-                          desc="Epoch {}".format(epoch),
+                          desc="Epoch {100}".format(epoch),
                           unit="batch"):
 
             inp, out = helper.transform_to_input_output(batch, dim=AlexNet.n_classes)
@@ -67,4 +71,12 @@ with tf.Session() as sess:
                     AlexNet.dropout: 1.})
         print("Test Acc: {}".format(test_acc))
 
+<<<<<<< Updated upstream
         saver.save(sess, "saved_AlexNet/alexnet.ckpt")
+=======
+<<<<<<< Updated upstream
+        saver.save(sess, "saved_AlexNet/alexnet.ckpt")
+=======
+        saver.save(sess, "saved_model/alexnet.ckpt")
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
