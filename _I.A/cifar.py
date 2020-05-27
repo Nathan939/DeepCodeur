@@ -2,6 +2,7 @@ import numpy as np
 import pickle
 import os
 import math
+import helper
 
 def __extract_file__(fname):
     with open(fname, 'rb') as fo:
@@ -44,6 +45,7 @@ class Cifar(object):
         self.__batch_num__ = 0
         for i in range(math.ceil(len(self.__res__)/batch_size)):
             self.batches.append(self.__res__[i*batch_size:(i+1)*batch_size])
+        self.test_set = __extract_reshape_file__(os.path.join(dir, "test_batch"))
 
     def batch(self, num):
         return self.batches[num]
@@ -59,3 +61,10 @@ class Cifar(object):
 
     def reset_batch(self):
         self.__batch_num__ = 0
+        
+    def create_resized_test_set(self, new_size=(224, 224), dim=1000):
+        self.test_set = helper.transform_to_input_output_and_pad(self.test_set, new_size=new_size, dim=dim)
+
+    def create_resized_batches(self, new_size=(224, 224), dim=1000):
+        self.resized_batches = [helper.transform_to_input_output_and_pad(batch, new_size=new_size, dim=dim) for batch in tqdm(self.batches, desc="Reshaping")]
+        self.create_resized_test_set(new_size, dim)

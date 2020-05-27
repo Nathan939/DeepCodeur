@@ -45,12 +45,12 @@ def video_suivante(video_id, transcribe):
             sound = AudioSegment.from_wav(str(audio_path) + '/' + video_id + ".wav")
             for text in transcribe:
                 for word in dic:
-                        if word.lower() in text['text'].lower():
-                            print('Found word')
-                            debut = text['start'] * 1000
-                            fin = debut + text['duration'] * 1000
-                            duree = sound[debut:fin]
-                            duree.export(audio_path + '/' + str(debut) + ' - subtitle '+ word.lower() + '.wav', format='wav')
+                    if word.lower() in text['text'].lower():
+                        print('Found word')
+                        debut = text['start'] * 1000
+                        fin = debut + text['duration'] * 1000
+                        duree = sound[debut:fin]
+                        duree.export(audio_path + '/' + str(debut) + ' - subtitle '+ word.lower() + '.wav', format='wav')
         else:
             print("Mais il n'y a pas les mots qui nous intéressent")
 

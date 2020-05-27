@@ -63,3 +63,5 @@ Lib/
 pyvenv.cfg
 share/
 logs/
+
+.vscode/

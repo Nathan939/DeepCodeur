@@ -7,6 +7,7 @@ import helper
 learning_rate = 0.001
 batch_size = 16
 no_of_epochs = 10
+dropout_rate = 0.5
 
 y = tf.placeholder(tf.float32, [None, AlexNet.n_classes])
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(
@@ -41,26 +42,29 @@ with tf.Session() as sess:
             sess.run([optimizer],
                         feed_dict={
                             AlexNet.input_images: inp,
-                            y: out})
+                            y: out,
+                           AlexNet.dropout: dropout_rate})
 
         merge = tf.summary.merge_all()
         acc, loss, summary = sess.run([accuracy, cost, merge],
                        feed_dict={
                            AlexNet.input_images: inp,
-                           y: out})
-        
+                           y: out,
+                           AlexNet.dropout: 1.})
+
         writer.add_summary(summary, i)
         i = i + 1
-            
+
         print("Acc: {} Loss: {}".format(acc, loss))
 
         inp_test, out_test = helper.transform_to_input_output(cifar.test_set,
                                                         dim=AlexNet.n_classes)
 
-        test_acc = sess.run([accuracy], 
-                feed_dict={ 
+        test_acc = sess.run([accuracy],
+                feed_dict={
                     AlexNet.input_images: inp_test,
-                    y: out_test })
+                    y: out_test,
+                    AlexNet.dropout: 1.})
         print("Test Acc: {}".format(test_acc))
 
         saver.save(sess, "saved_AlexNet/alexnet.ckpt")

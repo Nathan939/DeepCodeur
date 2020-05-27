@@ -4,48 +4,41 @@ import time
 from random import *
 import os.path
 import youtube_dl
+from pydub import AudioSegment
+from youtube_transcript_api import YouTubeTranscriptApi
+import wave
+import contextlib
+from math import *
 
-url = 'https://www.youtube.com/'
-response = requests.get(url)
-
-timeout = 60
-timeout_start = time.time()
-NUMBER_OF_FILES = 50
-
-URLs = []
+def get_audio_length(path_audio):
+    with contextlib.closing(wave.open(path_audio,'r')) as f:
+        frames = f.getnframes()
+        rate = f.getframerate()
+        duration = frames / float(rate)
+        return duration
+    
+def supp_stop_words(string404):
+    file1 = open("frenchST.txt")
+    line = file1.read()
+    mots = line.split()
+    for r in string404:
+        if r in mots:
+            string404.remove(r)
+    return string404
 
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+audio_path = os.path.join(SITE_ROOT, 'Audios\BpRYULlk5H4\BpRYULlk5H4.wav')
+sound = AudioSegment.from_wav(audio_path)
+transcript = YouTubeTranscriptApi.get_transcript("BpRYULlk5H4", ['fr'])
 
-# while time.time() < timeout_start + timeout:
-if response.ok:
-    soup = BeautifulSoup(response.text, 'lxml')
-    links = soup.findAll('a')
-    for link in links:
-        if len(link.get('href')) > 2 and link.get('href')[1] == 'w' and link.get('href') not in URLs:
-            URLs.append(link.get('href'))
-        if len(URLs) >= NUMBER_OF_FILES:
-            break
+texte = transcript[0]['text'].split()
+chunks_size = ceil(get_audio_length(audio_path) / 100) * 100 / len(texte)
+removed_list = supp_stop_words(texte)    
 
-ydl_opts = {
-'format': 'bestaudio/best',
-'outtmpl': SITE_ROOT + '/Audios/%(title)s.%(ext)s',
-'postprocessors': [{
-    'key': 'FFmpegExtractAudio',
-    'preferredcodec': 'wav',
-    'preferredquality': '192',
-}],
-}
+print(transcript[0]['start'], transcript[0]['start'] + transcript[0]['duration'], transcript[0]['start'] + transcript[0]['duration'] / len(texte))
 
-while time.time() < timeout_start + timeout:
-    if len(URLs) == 0:
-        break
-    print(time.time())
-    N = str(choice(URLs))
-    URLs.remove(N)
+chunks_size = (transcript[0]['start'] + transcript[0]['duration'] / len(texte)) * 1000
 
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.download(['https://www.youtube.com' + N])
-    print('\nDownloaded :', 'https://www.youtube.com' + N, '\n')
-    
-    time.sleep(3)
-    
+for ch in range(0, len(removed_list)):
+    part = sound[ch * chunks_size:(ch + 1) * chunks_size]
+    part.export('Audios/youpi {0}.wav'.format(ch), format='wav')
