@@ -1,4 +1,5 @@
 from cifar import Cifar
+from spec import Spec
 from tqdm import tqdm
 import tensorflow as tf
 import AlexNet
@@ -6,7 +7,7 @@ import helper
 
 learning_rate = 0.001
 batch_size = 16
-no_of_epochs = 10
+no_of_epochs = 100
 dropout_rate = 0.5
 
 y = tf.placeholder(tf.float32, [None, AlexNet.n_classes])
@@ -20,7 +21,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 tf.summary.histogram("cost", cost)
 tf.summary.histogram("accuracy", accuracy)
 
-cifar = Cifar(batch_size=batch_size)
+cifar = Spec(batch_size=batch_size)
 
 init = tf.initialize_all_variables()
 

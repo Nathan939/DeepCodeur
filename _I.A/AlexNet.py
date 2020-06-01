@@ -1,11 +1,12 @@
 import tensorflow as tf
 
 n_classes = 10
-image_size = 32
+image_size_1 = 32
+image_size_2 = 32
 
 dropout = tf.placeholder(tf.float32, name="dropout_rate")
 input_images = tf.placeholder(tf.float32,
-                              shape=[None, image_size, image_size, 3],
+                              shape=[None, image_size_1, image_size_2, 3],
                               name="input_images")
 
 # Network Size
