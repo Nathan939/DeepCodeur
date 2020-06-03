@@ -52,7 +52,7 @@ def html_printer():
                 if worksheet.cell(rowidx, 0).value == wrd:
                     htlm_generate(worksheet.cell(rowidx, 1) in f)
 
-
+                    
 if __name__ == "__main__":
     htlm_generate()
     css_generate()

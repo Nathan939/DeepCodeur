@@ -26,17 +26,17 @@ def envoi(request):
     with sr.AudioFile(path) as source:
         audio = r.record(source)
     # Google Cloud Recognition
-    """with open("google-api-key.json", 'r') as file:
-            json_cred = file.read()
     try:
-        result = r.recognize_google_cloud(audio, credentials_json=json_cred, language="fr-FR")
+        result = r.recognize_google(audio, language="fr-fr", key="31a5e855f751a62fd6b36ab22ff8df379f867379")
     except sr.UnknownValueError:
-        result = "JE N'AI PAS COMPRIS" """
+        result = "JE N'AI PAS COMPRIS"
+    """
     # Pocket Sphinx
     try:
         result = r.recognize_sphinx(audio)
     except sr.UnknownValueError:
         result = "JE N'AI PAS COMPRIS"
+    """
     print(result)
     # Crer un fichier txt avec le résultat de l'enregistrement
     f = open("resultat.txt", "w+")

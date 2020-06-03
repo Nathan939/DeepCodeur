@@ -77,3 +77,5 @@ class Spec(object):
         self.batch_size = batch_size
         self.batches = get_batch(batch_size, True)
         self.test_set = choices(get_batch(1, False), k=math.ceil(len(get_batch(1, False)) / 5))
+
+wavfiles2spec()
